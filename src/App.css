@@ -2,9 +2,46 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+h1 {
+  color: aliceblue;
+  overflow: hidden;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  animation: typing 3s steps(240, end);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-left: 650px;
+}
+
+.item p {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.item-list {
+  color: aliceblue;
+  list-style: none;
+}
+
+.complete-btn {
+  background-color: #4f9170;
+  color: aliceblue;
+}
+.remove-btn {
+  background-color: rgb(174, 75, 55);
+  color: aliceblue;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,8 +50,39 @@
   }
 }
 
+.item-box {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-bottom: 30px;
+  background-color: #f9f9f9;
+  max-width: 400px;
+}
+
+.item-box.complete {
+  background-color: #d7ffbf;
+}
+
+.item-box li {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.item-box p {
+  margin-top: 20px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.item-box button {
+  margin-right: 5px;
+}
+
+.app-container {
+  background-color: #88ab8e;
+}
+
 .App-header {
-  background-color: #282c34;
+  background-color: #88ab8e;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +103,129 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+p {
+  color: white;
+}
+
+.btn-sortAlpha {
+  background-color: #9ed2be;
+}
+.btn-sortQuanti {
+  background-color: #9ed2be;
+}
+.btn-all {
+  background-color: #a06ee2;
+}
+.btn-complete {
+  background-color: #b1c381;
+}
+.btn-pending {
+  background-color: #ef9595;
+}
+
+/* Button-specific styles */
+.btn-sortAlpha,
+.btn-sortQuanti,
+.btn-all,
+.btn-complete,
+.btn-pending,
+.btn-clearAll {
+  margin: 5px;
+  position: relative;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-sortAlpha:active,
+.btn-sortQuanti:active,
+.btn-all:active,
+.btn-complete:active,
+.btn-pending:active,
+.btn-clearAll:active {
+  transform: scale(0.96);
+}
+
+.btn-sortAlpha:before,
+.btn-sortQuanti:before,
+.btn-all:before,
+.btn-complete:before,
+.btn-pending:before,
+.btn-clearAll:before,
+.btn-sortAlpha:after,
+.btn-sortQuanti:after,
+.btn-all:after,
+.btn-complete:after,
+.btn-pending:after,
+.btn-clearAll:after {
+  position: absolute;
+  content: "";
+  width: 150%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1000;
+  background-repeat: no-repeat;
+}
+
+.btn-sortAlpha:hover:before,
+.btn-sortQuanti:hover:before,
+.btn-all:hover:before,
+.btn-complete:hover:before,
+.btn-pending:hover:before,
+.btn-clearAll:hover:before {
+  top: -70%;
+  background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+  background-position: 50% 120%;
+  animation: greentopBubbles 0.6s ease;
+}
+
+.btn-sortAlpha:hover:after,
+.btn-sortQuanti:hover:after,
+.btn-all:hover:after,
+.btn-complete:hover:after,
+.btn-pending:hover:after,
+.btn-clearAll:hover:after {
+  bottom: -70%;
+  background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+  background-position: 50% 0%;
+  animation: greenbottomBubbles 0.6s ease;
+}
+
+@keyframes greentopBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+  /* Other keyframes rules */
+}
+
+@keyframes greenbottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+  /* Other keyframes rules */
 }

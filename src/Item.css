@@ -1,0 +1,116 @@
+/* Item.css */
+
+.edit-text {
+  background-color: #ffeecc;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.save-btn {
+  width: fit-content;
+}
+
+.complete-btn,
+.save-btn {
+  background-color: #b1c381;
+}
+
+.remove-btn,
+.btn-clearAll {
+  background-color: #ef9595;
+}
+
+.edit-btn {
+  background-color: #a06ee2;
+}
+
+.complete-btn,
+.remove-btn,
+.edit-btn,
+.save-btn {
+  position: relative;
+  padding: 5px 11px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.complete-btn:active,
+.remove-btn:active,
+.edit-btn:active,
+.save-btn:active {
+  transform: scale(0.96);
+}
+
+.complete-btn:before,
+.remove-btn:before,
+.edit-btn:before,
+.save-btn:before,
+.complete-btn:after,
+.remove-btn:after,
+.edit-btn:after,
+.save-btn:after {
+  position: absolute;
+  content: "";
+  width: 150%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1000;
+  background-repeat: no-repeat;
+}
+
+.complete-btn:hover:before,
+.remove-btn:hover:before,
+.save-btn:hover:before {
+  top: -70%;
+  background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+  background-position: 50% 120%;
+  animation: greentopBubbles 0.6s ease;
+}
+
+.complete-btn:hover::after,
+.remove-btn:hover::after,
+.save-btn:hover::after {
+  bottom: -70%;
+  background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+  background-position: 50% 0%;
+  animation: greenbottomBubbles 0.6s ease;
+}
+
+@keyframes greentopBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+  /* Other keyframes rules */
+}
+
+@keyframes greenbottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+  /* Other keyframes rules */
+}
